@@ -9,10 +9,6 @@
 # Exclude all pycache and package files
 **/__pycache__/
 *.pyc
-build/
-*.egg/
-*.egg-info/
-neet.egg-info/*
 .python-version
 
 # Unit Tests #
