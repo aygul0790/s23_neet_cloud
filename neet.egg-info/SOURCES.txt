@@ -43,3 +43,7 @@ neet/streamlit_api/__init__.py
 neet/streamlit_api/codes.py
 neet/streamlit_api/plots.py
 neet/streamlit_api/utils.py
+tests/test_pandera_booleans.py
+tests/test_preprocessing.py
+tests/test_roni.py
+tests/test_schema.py
