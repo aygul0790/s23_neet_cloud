@@ -10,7 +10,6 @@ load_dotenv()
 # DATA #
 ########
 DATA_DEVELOP_PATH = Path.cwd() / os.getenv("DATA_DEVELOP_PATH")
-
 DATA_STREAMLIT_PATH = Path.cwd() / os.getenv("DATA_STREAMLIT_PATH")
 
 # Data develop
