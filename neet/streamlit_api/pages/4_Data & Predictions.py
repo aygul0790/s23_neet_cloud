@@ -10,8 +10,8 @@ from utils import (
     COHORTS,
     literal_cohorts,
 )
-from neet.data_sources.preprocessing_functions import read_csv_file
-from neet.data_sources.schema import get_schema
+from data_sources.preprocessing_functions import read_csv_file
+from data_sources.schema import get_schema
 
 st.set_page_config(
     page_title="Data & Predictions - NEETalert",
