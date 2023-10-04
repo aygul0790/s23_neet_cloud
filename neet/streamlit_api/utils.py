@@ -7,13 +7,13 @@ import plotly.graph_objects as go
 
 from codes import activity_codes_higher_level
 
-from neet.ml_logic.roni import calculate_roni_score
-from neet.constants import (
+from ml_logic.roni import calculate_roni_score
+from constants import (
     DATA_STREAMLIT_RAW_PATH,
     DATA_SYNTHETIC,
 )
 
-from neet.constants import DatasetType
+from constants import DatasetType
 from neet.interface.main import streamlit_predictions
 
 PLOTLY_CONFIG = {
@@ -281,7 +281,7 @@ def scroll_to_top() -> None:
             body.scrollTop = 0
         </script>"""
     components.html(js)
-    
+
 
 def map_activity_code_categories(series: pd.Series, mapping: dict) -> pd.Series:
     """
@@ -363,7 +363,7 @@ def rearrange_data() -> None:
                 dfs.append(nested_dict["data"])
         return dfs
 
-    school_performance = st.session_state.file_schools_performance   
+    school_performance = st.session_state.file_schools_performance
     data_raw = st.session_state.data_raw
 
     # Check that all files are available. Should not be necessary,
@@ -377,7 +377,7 @@ def rearrange_data() -> None:
     exclusions = search_data_raw_dict(data_raw, "exclusions")
     ks4 = search_data_raw_dict(data_raw, "ks4")
     september_guarantee = search_data_raw_dict(data_raw, "september-guarantee")
-    nccis = search_data_raw_dict(data_raw, "nccis")    
+    nccis = search_data_raw_dict(data_raw, "nccis")
     school_performance = [school_performance["df"]] # to list for pre-processing
 
     return DatasetType(
@@ -389,7 +389,7 @@ def rearrange_data() -> None:
         september_guarantee,
         school_performance,
     )
-    
+
 
 def calculate_predictions() -> None:
     """
@@ -397,7 +397,7 @@ def calculate_predictions() -> None:
     Results are saved to session state.
     """
     datasets = rearrange_data()
-    
+
     with st.spinner("Calculating predictions ..."):
         scroll_to_top()
         # If we have no model three we can determine the correct model like that.
@@ -407,7 +407,7 @@ def calculate_predictions() -> None:
         else:
             y_hat = streamlit_predictions(datasets, "model1")
             st.write(y_hat)
-            
+
     st.success("Predictions calculated")
     st.balloons()
 
