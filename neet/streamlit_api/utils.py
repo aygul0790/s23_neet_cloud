@@ -14,7 +14,7 @@ from constants import (
 )
 
 from constants import DatasetType
-from neet.interface.main import streamlit_predictions
+# from neet.interface.main import streamlit_predictions
 
 PLOTLY_CONFIG = {
     "displayModeBar": False,
@@ -391,25 +391,25 @@ def rearrange_data() -> None:
     )
 
 
-def calculate_predictions() -> None:
-    """
-    Resort the datastructure to pass it to the pipeline.
-    Results are saved to session state.
-    """
-    datasets = rearrange_data()
+# def calculate_predictions() -> None:
+#     """
+#     Resort the datastructure to pass it to the pipeline.
+#     Results are saved to session state.
+#     """
+#     datasets = rearrange_data()
 
-    with st.spinner("Calculating predictions ..."):
-        scroll_to_top()
-        # If we have no model three we can determine the correct model like that.
-        if len(datasets.nccis) > 0:
-            y_hat = streamlit_predictions(datasets, "model2")
-            st.write(y_hat)
-        else:
-            y_hat = streamlit_predictions(datasets, "model1")
-            st.write(y_hat)
+#     with st.spinner("Calculating predictions ..."):
+#         scroll_to_top()
+#         # If we have no model three we can determine the correct model like that.
+#         if len(datasets.nccis) > 0:
+#             y_hat = streamlit_predictions(datasets, "model2")
+#             st.write(y_hat)
+#         else:
+#             y_hat = streamlit_predictions(datasets, "model1")
+#             st.write(y_hat)
 
-    st.success("Predictions calculated")
-    st.balloons()
+#     st.success("Predictions calculated")
+#     st.balloons()
 
 
 def plotly_static(fig: go.Figure) -> go.Figure:
