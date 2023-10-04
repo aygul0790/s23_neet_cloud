@@ -86,7 +86,6 @@ nbclassic==1.0.0
 nbclient==0.8.0
 nbconvert==7.6.0
 nbformat==5.9.1
-neet==1.0.3
 nest-asyncio==1.5.6
 notebook==6.5.4
 notebook_shim==0.2.3
