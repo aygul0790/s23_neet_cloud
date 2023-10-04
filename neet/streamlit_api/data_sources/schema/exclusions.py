@@ -1,5 +1,5 @@
 from pandera import DataFrameSchema, Column
-from neet.data_sources.schema.dtypes import YesNoBool
+from data_sources.schema.dtypes import YesNoBool
 
 _schema = DataFrameSchema(
     columns={

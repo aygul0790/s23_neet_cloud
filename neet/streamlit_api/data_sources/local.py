@@ -4,10 +4,10 @@ import os
 from pathlib import Path
 from typing import List
 
-import neet.data_sources.preprocessing_functions as preproc
-import neet.data_sources.constants as constants
-from neet.data_sources.schema import get_schema
-from neet.constants import DATA_DEVELOP_RAW_PATH, DatasetType
+import data_sources.preprocessing_functions as preproc
+import data_sources.constants as constants
+from data_sources.schema import get_schema
+from constants import DATA_DEVELOP_RAW_PATH, DatasetType
 
 os.chdir(DATA_DEVELOP_RAW_PATH)
 cwd = Path.cwd()

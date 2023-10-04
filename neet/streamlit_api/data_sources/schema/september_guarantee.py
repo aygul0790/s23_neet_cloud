@@ -1,6 +1,6 @@
 from pandas import Timestamp
 from pandera import DataFrameSchema, Column, Check, Index, MultiIndex
-from neet.data_sources.schema.dtypes import YesNoBool
+from data_sources.schema.dtypes import YesNoBool
 
 
 _schema = DataFrameSchema(

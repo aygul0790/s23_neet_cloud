@@ -1,13 +1,13 @@
 from typing import Literal
 import pandera as pa
 
-from neet.data_sources.schema.attendance import _schema as attendance
-from neet.data_sources.schema.census import _schema as census
-from neet.data_sources.schema.exclusions import _schema as exclusions
-from neet.data_sources.schema.ks4 import _schema as ks4
-from neet.data_sources.schema.nccis import _schema as nccis
-from neet.data_sources.schema.school_performance import _schema as school_performance
-from neet.data_sources.schema.september_guarantee import _schema as sept_guarantee
+from data_sources.schema.attendance import _schema as attendance
+from data_sources.schema.census import _schema as census
+from data_sources.schema.exclusions import _schema as exclusions
+from data_sources.schema.ks4 import _schema as ks4
+from data_sources.schema.nccis import _schema as nccis
+from data_sources.schema.school_performance import _schema as school_performance
+from data_sources.schema.september_guarantee import _schema as sept_guarantee
 
 
 def get_schema(
