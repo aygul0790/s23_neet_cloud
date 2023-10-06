@@ -509,8 +509,8 @@ def main():
 
     # Bail early if no uid is selected
     if uid is None:
-        st.title("Information about one young person")
-        st.warning("Please select a young person")
+        st.title("Information about one individual")
+        st.warning("Please select a young person using the menu on the left")
         st.stop()
 
     # TODO: Bail early if that student was dropped in between.
@@ -543,7 +543,7 @@ def main():
 
     #roni_score = (st.session_state.data_roni_score).loc[uid, "roni_score"]
     roni_score = 4
-    
+
     col2.metric(
         "RONI Score",
         value=roni_score,
@@ -570,10 +570,10 @@ def main():
 
     with col1:
         st.markdown(
-            f"""**UID:** {uid}<br> 
+            f"""**UID:** {uid}<br>
             **Ethnicity:** {ethnicity.get(series["census_ethnicity"])} <br>
-            **Gender:** {gender.get(series["census_gender"])}<br> 
-            **Language:** {series["census_language"]}<br> 
+            **Gender:** {gender.get(series["census_gender"])}<br>
+            **Language:** {series["census_language"]}<br>
             **Postcode:** {series["postcode"]}""",
             unsafe_allow_html=True,
         )
@@ -589,8 +589,8 @@ def main():
         # Only print SEN information if flag is set.
         if series["census_senprovision_y11"] in ["K", "E"]:
             st.markdown(
-                f"""**SEN Provision:** {senprovision.get(series["census_senprovision_y11"])}<br> 
-                **Primary SEN need:** {sentypes.get(series["census_senneed1"])}<br> 
+                f"""**SEN Provision:** {senprovision.get(series["census_senprovision_y11"])}<br>
+                **Primary SEN need:** {sentypes.get(series["census_senneed1"])}<br>
                 **Secondary SEN need:** {sentypes.get(series["census_senneed2"])}""",
                 unsafe_allow_html=True,
             )
@@ -611,7 +611,7 @@ def main():
         st.subheader("Area of living", anchor=False)
         st.markdown(
             f"""**Postcode:** {series["postcode"]}<br>
-                **Index of Deprivation:** {series["index_of_multiple_deprivation_imd_score"]}<br> 
+                **Index of Deprivation:** {series["index_of_multiple_deprivation_imd_score"]}<br>
                 **LSOA name:** {series["lsoa_name_2011"]}<br>""",
             unsafe_allow_html=True,
         )
@@ -635,8 +635,8 @@ def main():
 
     st.header("Attendance", anchor=False)
     st.markdown(
-        f"""**Young person suspended:** {binary.get(series["excluded_ever_suspended"])}<br> 
-        **Young person excluded:** {binary.get(series["excluded_ever_excluded"])}<br> 
+        f"""**Young person suspended:** {binary.get(series["excluded_ever_suspended"])}<br>
+        **Young person excluded:** {binary.get(series["excluded_ever_excluded"])}<br>
         **Exclusion rescinded:** {binary.get(series["excluded_exclusions_rescinded"])}<br> """,
         unsafe_allow_html=True,
     )

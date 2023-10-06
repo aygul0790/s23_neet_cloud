@@ -566,10 +566,10 @@ def render_list_of_files() -> None:
 
     st.header("Uploaded files")
     """
-    Below you can find the cohorts that are available in the dashboard. Cohorts are
+    Below you can find the cohorts available in the dashboard. Cohorts are
     based on Year 11.
     The correct prediction is automatticaly determined by the latest available NCCIS
-    file. Predictions are only generated for cohorts with incomplete NCCIS data.
+    file. Predictions are only generated for cohorts with complete NCCIS data.
     """
 
     if not st.session_state.data_raw:
@@ -646,7 +646,7 @@ def main():
 
     st.header("Process data & calculate predictions", anchor=False)
     """
-    A prepared machine learning model is used to make predictions about NEET students
+    A prepared machine learning model is used to make predictions about NEET individuals
     based on the provided data. This model is fast and should creat valid predictions.
     Nonetheless extreme care as to be taken in evaluating the results. Please consult the
     provided documentation and instructions for futher information.
